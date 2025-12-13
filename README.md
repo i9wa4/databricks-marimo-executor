@@ -8,7 +8,8 @@ Execute [marimo](https://marimo.io/) notebooks on Databricks clusters.
 
 ## 1. Status
 
-This package is under development. Full implementation is planned for future releases.
+This package is under development.
+Full implementation is planned for future releases.
 
 ## 2. Installation
 
