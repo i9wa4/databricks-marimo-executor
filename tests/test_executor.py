@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
-
 from databricks_marimo_executor import MarimoExecutor
 
 
@@ -14,10 +12,15 @@ class TestMarimoExecutor:
         """Test initialization without base executor."""
         executor = MarimoExecutor()
         assert executor.base is None
+        assert executor._databricks_executor is None
+        assert executor._config is None
 
-    def test_execute_cell_not_implemented(self) -> None:
-        """Test that execute_cell raises NotImplementedError without base."""
-        executor = MarimoExecutor()
+    def test_init_with_base(self) -> None:
+        """Test initialization with base executor."""
 
-        with pytest.raises(NotImplementedError):
-            executor.execute_cell(None, {}, None)  # type: ignore[arg-type]
+        class MockExecutor:
+            pass
+
+        mock_base = MockExecutor()
+        executor = MarimoExecutor(base=mock_base)  # type: ignore[arg-type]
+        assert executor.base is mock_base
