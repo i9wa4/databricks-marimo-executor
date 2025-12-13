@@ -3,7 +3,7 @@ requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
-name = "marimo-databricks"
+name = "databricks-marimo-executor"
 dynamic = ["version"]
 description = "Execute marimo notebooks on Databricks clusters"
 readme = "README.md"
@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [project.entry-points."marimo.cell.executor"]
-databricks = "marimo_databricks:MarimoExecutor"
+databricks = "databricks_marimo_executor:MarimoExecutor"
 
 [dependency-groups]
 dev = [
@@ -39,7 +39,7 @@ dev = [
 source = "vcs"
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/marimo_databricks/_version.py"
+version-file = "src/databricks_marimo_executor/_version.py"
 
 [tool.ruff]
 target-version = "py311"
@@ -65,7 +65,7 @@ ignore = [
 "tests/**/*.py" = ["S101"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["marimo_databricks"]
+known-first-party = ["databricks_marimo_executor"]
 
 [tool.mypy]
 strict = true

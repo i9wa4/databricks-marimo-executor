@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from marimo_databricks import MarimoExecutor
+from databricks_marimo_executor import MarimoExecutor
 
 
 class TestMarimoExecutor:

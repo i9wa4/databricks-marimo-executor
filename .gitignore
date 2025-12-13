@@ -207,4 +207,4 @@ marimo/_lsp/
 __marimo__/
 
 # hatch-vcs generated version file
-src/marimo_databricks/_version.py
+src/databricks_marimo_executor/_version.py
